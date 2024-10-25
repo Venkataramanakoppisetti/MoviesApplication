@@ -1,52 +1,147 @@
 .account-container {
+  height: 70vh;
+  padding-top: 32px;
+  padding-right: 32px;
+  padding-left: 32px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  background-color: black;
-  height: 100vh;
+  background-color: #e5e5e5;
 }
 
-.account-container-2 {
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  padding-left: 40px;
-  padding-right: 40px;
-  line-height: 1;
-  height: 90vh;
-}
-
-.logout-button {
+.heading {
   font-family: 'Roboto';
-  font-weight: bold;
-  font-size: 14px;
-  color: #ffffff;
-  height: 40px;
-  width: 150px;
-  margin-top: 20px;
-  margin-bottom: 2px;
-  background-color: #e50914;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  outline: none;
-  align-self: center;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+  color: #131313;
+  margin-bottom: 8px;
 }
-.account-element {
+.header-sec {
+  background-color: black;
+}
+
+.hz-line {
+  border: none;
+  border-top: 3px solid #cbd5e1;
+  border-radius: 10px;
+  margin-bottom: 24px;
+}
+
+.membership-container {
+  margin-bottom: 24px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.member-details {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 23px;
+  color: #94a3b8;
+  margin-right: 11px;
+}
+
+.username {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  color: #1e293b;
+  margin-bottom: 6px;
+}
+.password {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  color: #64748b;
+}
+.password-container {
   display: flex;
   align-items: center;
-  padding-left: 20px;
-  border-bottom: 1px solid grey;
 }
-.header-element {
-  align-self: flex-start;
-  margin-right: 20px;
-  color: #94a3b8;
-  font-size: 16px;
+.plan-details-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.plan-type {
+  font-family: 'Roboto';
+  margin-left: 10px;
+  font-style: normal;
   font-weight: 600;
-  line-height: 31px;
+  font-size: 14px;
+  line-height: 18px;
+  color: #1e293b;
+  border: 1px solid #1e293b;
+  border-radius: 2px;
+  padding: 2px 4px;
+  height: 22px;
+  width: 64px;
 }
-.ultra-hd {
-  border: 1px solid grey;
-  font-size: 10px;
+
+.logout-btn {
+  font-family: 'Roboto';
+  height: 50px;
+  width: 89px;
+  background: #e50914;
+  border-radius: 4px;
+  color: #ffffff;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  align-self: center;
+  border: none;
+  margin-top: 24px;
+  cursor: pointer;
+  outline: none;
+}
+@media (min-width: 768px) {
+  .account-container {
+    padding-left: 165px;
+    padding-right: 165px;
+    padding-top: 64px;
+  }
+
+  .heading {
+    margin-bottom: 24px;
+  }
+
+  .member-details {
+    margin-right: 24px;
+    font-size: 24px;
+    line-height: 31px;
+  }
+
+  .username {
+    font-size: 24px;
+    line-height: 31px;
+    margin-bottom: 13px;
+  }
+
+  .password {
+    font-size: 24px;
+    line-height: 31px;
+  }
+
+  .plan-type {
+    font-size: 18px;
+    line-height: 23px;
+    width: 79px;
+    height: 27px;
+  }
+
+  .logout-btn {
+    margin-top: 40px;
+  }
+}
+.footer-sec {
+  background-color: black;
 }

@@ -13,27 +13,27 @@ const apiStatusConstants = {
   inProgress: 'IN_PROGRESS',
 }
 
-class Originals extends Component {
+class TrendingNow extends Component {
   state = {
-    originalsMoviesList: [],
+    trendingMoviesList: [],
     apiStatus: apiStatusConstants.initial,
   }
 
   componentDidMount() {
-    this.getOriginalsMovies()
+    this.getTrendingMovies()
   }
 
-  getOriginalsMovies = async () => {
+  getTrendingMovies = async () => {
     this.setState({apiStatus: apiStatusConstants.inProgress})
     const jwtToken = Cookies.get('jwt_token')
-    const originalsMoviesApi = 'https://apis.ccbp.in/movies-app/originals'
+    const TrendingMoviesApi = 'https://apis.ccbp.in/movies-app/trending-movies'
     const options = {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${jwtToken}`,
       },
     }
-    const response = await fetch(originalsMoviesApi, options)
+    const response = await fetch(TrendingMoviesApi, options)
     if (response.ok === true) {
       const fetchedData = await response.json()
       const updatedData = fetchedData.results.map(eachMovie => ({
@@ -42,7 +42,7 @@ class Originals extends Component {
         title: eachMovie.title,
       }))
       this.setState({
-        originalsMoviesList: updatedData,
+        trendingMoviesList: updatedData,
         apiStatus: apiStatusConstants.success,
       })
     } else {
@@ -61,10 +61,10 @@ class Originals extends Component {
   renderLoadingView = () => <Loading />
 
   renderSuccessView = () => {
-    const {originalsMoviesList} = this.state
+    const {trendingMoviesList} = this.state
     return (
       <>
-        <ReactSlick moviesList={originalsMoviesList} />
+        <ReactSlick moviesList={trendingMoviesList} />
       </>
     )
   }
@@ -89,11 +89,9 @@ class Originals extends Component {
 
   render() {
     return (
-      <div className="originals-container">
-        {this.renderOriginalsCarousel()}
-      </div>
+      <div className="trending-container">{this.renderOriginalsCarousel()}</div>
     )
   }
 }
 
-export default Originals
+export default TrendingNow

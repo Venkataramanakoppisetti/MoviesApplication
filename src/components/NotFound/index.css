@@ -1,10 +1,42 @@
-.failureContainer {
-  background-image: url('https://res.cloudinary.com/dtjcxf7z5/image/upload/v1650260401/Mini%20Project%20Netflix%20Clone/failure_view_bg_a1zuq5.png');
+.not-found-container {
+  background-image: url('https://res.cloudinary.com/dsiyffj0o/image/upload/v1670756880/snow-removal-machine-working-high-ski-slope-snowstorm_454047-2149_1_xfrlul.png');
+  min-height: 100vh;
   background-size: cover;
-  height: 100vh;
-  width: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.heading {
+  font-family: 'Roboto';
+  font-size: 36px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.description {
+  font-family: 'Roboto';
+  font-size: 16px;
+  color: #ffffff;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.go-home-btn {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  color: #171f46;
+  width: 127px;
+  height: 48px;
+  background: #ffffff;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
 }

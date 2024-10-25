@@ -1,60 +1,46 @@
-import MovieContext from '../../context/MovieContext'
+import Cookies from 'js-cookie'
 import Header from '../Header'
 import Footer from '../Footer'
 
 import './index.css'
 
-const Account = props => (
-  <MovieContext.Consumer>
-    {value => {
-      const {username, password, triggerLogout} = value
-
-      const onClickLogout = () => {
-        triggerLogout(props)
-      }
-
-      const hiddenPassword = '*'.repeat(password.length)
-
-      return (
-        <>
-          <div className="account-container" testid="account">
-            <Header />
-            <div className="account-container-2">
-              <h1>
-                Account
-                <hr />
-              </h1>
-
-              <div className="account-element">
-                <p className="header-element">Member ship</p>
-                <div>
-                  <p>{username}@gmail.com</p>
-                  <p>Password: {hiddenPassword} </p>
-                </div>
-              </div>
-              <hr />
-
-              <div className="account-element">
-                <p className="header-element">Plan Details</p>
-                <div>
-                  <p>Premium</p>
-                  <p className="ultra-hd">Ultra HD</p>
-                </div>
-              </div>
-              <button
-                type="button"
-                className="logout-button"
-                onClick={onClickLogout}
-              >
-                Logout
-              </button>
-            </div>
-
-            <Footer />
+const Account = props => {
+  const onClickLogout = () => {
+    Cookies.remove('jwt_token')
+    const {history} = props
+    history.replace('/login')
+  }
+  return (
+    <>
+      <div className="header-sec">
+        <Header />
+      </div>
+      <div className="account-container">
+        <h1 className="heading">Account</h1>
+        <hr className="hz-line" />
+        <div className="membership-container">
+          <p className="member-details">Member ship</p>
+          <div className="user-details">
+            <p className="username">madhu7544@gmail.com</p>
+            <p className="password">Password: **********</p>
           </div>
-        </>
-      )
-    }}
-  </MovieContext.Consumer>
-)
+        </div>
+        <hr className="hz-line" />
+        <div className="plan-details-container">
+          <p className="member-details">Plan Details</p>
+          <p className="username">Premium</p>
+          <p className="plan-type">Ultra HD</p>
+        </div>
+        <hr className="hz-line" />
+        <button onClick={onClickLogout} type="button" className="logout-btn">
+          Logout
+        </button>
+      </div>
+      <div className="footer-sec">
+        <Footer />
+      </div>
+    </>
+  )
+}
+
 export default Account
