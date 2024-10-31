@@ -175,25 +175,21 @@
 }
 
 .movie-information {
-  padding-left: 165px;
-  padding-right: 135px;
+  padding: 10px;
   background-color: black;
 }
 
 .movie-details-container {
   display: flex;
   justify-content: space-between;
-  padding: 50px;
+  padding: 10px;
 }
 @media screen and (max-width: 768px) {
   .movie-details-container {
-    flex-direction: column;
+    gap: 50px;
   }
 }
 
-.each-info {
-  margin-right: 10px;
-}
 
 .info-heading {
   font-family: 'Roboto';
@@ -219,8 +215,19 @@
 }
 
 .similar-movies-container {
-  padding-right: 19px;
+  padding: 10px;
   margin-top: 20px;
+  margin-left: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .similar-movies-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
 }
 
 .side-heading {
@@ -229,7 +236,7 @@
   font-weight: 600;
   font-size: 20px;
   line-height: 26px;
-  color: #ffffff;
+  color: #b3aeae;
   margin-bottom: 16px;
 }
 
@@ -239,5 +246,11 @@
   list-style: none;
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: wrap-reverse;
+}
+
+@media screen and (max-width: 768px) {
+  .similar-movies-list {
+    flex-wrap: wrap-reverse;
+  }
 }

@@ -29,6 +29,14 @@ class MovieDetailsView extends Component {
     this.getMovieDetailsList()
   }
 
+  componentDidUpdate(prevProps) {
+    const {match} = this.props
+    const {id} = match.params
+    if (id !== prevProps.match.params.id) {
+      this.getMovieDetailsList()
+    }
+  }
+
   getMovieDetailsList = async () => {
     this.setState({
       apiStatus: apiStatusConstants.inProgress,
